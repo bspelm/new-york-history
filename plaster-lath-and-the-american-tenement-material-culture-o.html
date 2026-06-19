@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plaster, Lath, and the American Tenement: Material Culture of NYC Ceilings</title>
+<meta name="description" content="A material-culture zine on how horsehair plaster, wood lath, and gypsum board shaped the social life of New York City tenements and walk-ups across the 19th and 20th centuries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3ecd8;
+    --ink:#171411;
+    --teal:#00857c;
+    --orange:#ff5a1f;
+    --pink:#e91e63;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:'Space Grotesk',sans-serif;font-size:17px;line-height:1.65}
+  body{
+    background-image:
+      radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
+      radial-gradient(rgba(233,30,99,0.04) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 2px;
+  }
+  a{color:var(--teal);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+  a:hover{color:var(--orange)}
+  .wrap{max-width:920px;margin:0 auto;padding:24px}
+  /* Masthead */
+  .masthead{
+    border:3px solid var(--ink);
+    padding:20px 22px;
+    margin:18px 0 30px;
+    background:var(--paper);
+    position:relative;
+    box-shadow: 6px 6px 0 var(--orange);
+  }
+  .masthead .kicker{
+    font-family:'DM Mono',monospace;
+    font-size:12px;letter-spacing:0.15em;text-transform:uppercase;
+    color:var(--teal);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    margin-bottom:14px;
+  }
+  .masthead h1{
+    font-family:'Archivo Black',sans-serif;
+    font-size:clamp(34px,7vw,62px);
+    line-height:0.95;letter-spacing:-0.02em;
+    margin:0 0 12px;
+    color:var(--ink);
+  }
+  .masthead h1 span{color:var(--pink)}
+  .masthead .dek{
+    font-size:18px;max-width:60ch;
+    border-top:2px solid var(--ink);padding-top:12px;
+  }
+  /* Zine page */
+  .zine-page{
+    border:2px solid var(--ink);
+    background:var(--paper);
+    padding:28px 26px;
+    margin:32px 0;
+    position:relative;
+  }
+  .zine-page::before{
+    content:attr(data-page);
+    position:absolute;top:-14px;left:20px;
+    background:var(--ink);color:var(--paper);
+    font-family:'DM Mono',monospace;font-size:11px;
+    padding:4px 9px;letter-spacing:0.1em;
+  }
+  .zine-page h2{
+    font-family:'Archivo Black',sans-serif;
+    font-size:clamp(26px,4.5vw,40px);
+    line-height:1;letter-spacing:-0.01em;
+    margin:0 0 18px;
+    text-transform:uppercase;
+  }
+  .zine-page h2 em{font-style:normal;background:var(--orange);color:var(--paper);padding:0 6px;display:inline-block;transform:rotate(-1deg)}
+  .zine-page h3{
+    font-family:'Space Grotesk',sans-serif;font-weight:700;
+    font-size:20px;margin:24px 0 8px;
+    color:var(--teal);
+  }
+  .zine-page p{margin:0 0 16px}
+  .zine-page p:first-of-type::first-letter{
+    font-family:'Archivo Black',sans-serif;
+    font-size:62px;float:left;line-height:0.85;
+    padding:4px 8px 0 0;color:var(--pink);
+  }
+  /* rotated card */
+  .card-tilt{
+    border:2px solid var(--ink);
+    background:var(--paper);
+    padding:18px 20px;
+    margin:26px 0;
+    transform:rotate(-1.2deg);
+    box-shadow:5px 5px 0 var(--teal);
+  }
+  .card-tilt.right{transform:rotate(1.4deg);box-shadow:-5px 5px 0 var(--pink)}
+  .card-tilt h4{
+    font-family:'Archivo Black',sans-serif;
+    margin:0 0 10px;font-size:18px;text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  /* pull quote */
+  .pq{
+    font-family:'Archivo Black',sans-serif;
+    font-size:clamp(26px,4vw,38px);
+    line-height:1.05;
+    color:var(--ink);
+    background:var(--paper);
+    border-top:4px solid var(--pink);
+    border-bottom:4px solid var(--pink);
+    padding:22px 0;
+    margin:30px -8px;
+  }
+  .pq span{background:var(--pink);color:var(--paper);padding:0 4px}
+  /* sidebar */
+  .sidebar{
+    background:var(--teal);
+    color:var(--paper);
+    padding:22px;
+    margin:26px 0;
+    font-family:'DM Mono',monospace;
+    font-size:14px;line-height:1.55;
+  }
+  .sidebar h4{
+    font-family:'Archivo Black',sans-serif;
+    font-size:16px;margin:0 0 10px;
+    color:var(--orange);text-transform:uppercase;
+    letter-spacing:0.08em;
+  }
+  .sidebar ul{margin:0;padding-left:18px}
+  .sidebar li{margin-bottom:6px}
+  /* spec table */
+  table.spec{
+    width:100%;border-collapse:collapse;
+    font-family:'DM Mono',monospace;font-size:14px;
+    margin:18px 0;
+    border:2px solid var(--ink);
+  }
+  table.spec th, table.spec td{
+    border-bottom:1px solid var(--ink);
+    padding:9px 10px;text-align:left;vertical-align:top;
+  }
+  table.spec th{
+    background:var(--ink);color:var(--paper);
+    font-family:'Archivo Black',sans-serif;
+    font-weight:normal;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;
+  }
+  table.spec tr:nth-child(even) td{background:rgba(0,133,124,0.08)}
+  /* footer */
+  .colophon{
+    border:2px dashed var(--ink);
+    padding:22px;
+    margin:40px 0 20px;
+    font-family:'DM Mono',monospace;
+    font-size:13px;
+    line-height:1.6;
+  }
+  .colophon h5{
+    font-family:'Archivo Black',sans-serif;
+    text-transform:uppercase;letter-spacing:0.1em;
+    margin:0 0 10px;color:var(--orange);font-size:14px;
+  }
+  .bleed-banner{
+    background:var(--orange);
+    color:var(--paper);
+    font-family:'Archivo Black',sans-serif;
+    font-size:13px;letter-spacing:0.2em;text-transform:uppercase;
+    padding:8px 0;
+    margin:0 -24px 18px;
+    text-align:center;
+    transform:rotate(-0.5deg);
+  }
+  hr.rule{border:none;border-top:3px solid var(--ink);margin:24px 0}
+  .stamp{
+    display:inline-block;border:2px solid var(--pink);
+    color:var(--pink);font-family:'DM Mono',monospace;
+    font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
+    padding:5px 10px;transform:rotate(-3deg);
+    margin-bottom:14px;
+  }
+  @media (max-width:768px){
+    body{font-size:16px}
+    .wrap{padding:14px}
+    .masthead{padding:16px;box-shadow:4px 4px 0 var(--orange)}
+    .zine-page{padding:22px 18px}
+    .bleed-banner{margin:0 -18px 16px}
+    .pq{font-size:24px;margin:24px 0}
+    .card-tilt{transform:none;box-shadow:4px 4px 0 var(--teal)}
+    .card-tilt.right{transform:none;box-shadow:-4px 4px 0 var(--pink)}
+    .zine-page p:first-of-type::first-letter{font-size:48px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="kicker">
+    <span>HORSEHAIR QUARTERLY · Vol. 6 / No. 2</span>
+    <span>Material Culture Zine · Brooklyn, NY</span>
+  </div>
+  <h1>Plaster, Lath &amp; the <span>American Tenement</span></h1>
+  <div class="dek">A material-culture zine on the ceilings of New York City: what they were made of, who built them, who slept beneath them, and what the lath behind the lath actually tells us.</div>
+</header>
+
+<!-- PAGE 1 -->
+<article class="zine-page" data-page="PAGE 01 / OVERTURE">
+  <div class="bleed-banner">Above your head, a class history</div>
+  <span class="stamp">Issue Theme: Looking Up</span>
+  <h2>The Ceiling Is the <em>Cheapest</em> Surface in the Apartment</h2>
+
+  <p>Every story about a tenement begins on the floor and works upward: the stoop, the dumbwaiter, the airshaft, the railroad rooms. But the ceiling is where the building's economics finally have nowhere left to hide. The plasterer was paid less than the bricklayer, worked faster than the carpenter, and finished last. So when historians, preservationists, or a <a href="https://sjc1.vultrobjects.com/new-york/new-york-city-s-century-of-crumbling-ceilings-a-building-hi.html">NYC ceiling collapse lawyer</a> looks up at a sagging cornice in a Lower East Side walk-up, they are reading the cheapest, fastest layer of a building whose owners were squeezed at every joint between joists. The ceiling is a confession.</p>
+
+  <p>This issue of <em>Horsehair Quarterly</em> is not about codes, lawsuits, or inspection cycles. It is about the stuff: lime, horsehair, sand, gypsum, paper, plywood furring, and the changing population beneath it. We move from the brown coat of a Kleindeutschland tenement on Orchard Street up through the popcorn ceilings of a Co-op City unit finished in 1971. We treat the ceiling as a class artifact, like a shoe or a cooking pot.</p>
+
+  <p>The Tenement Museum at 103 Orchard Street, which preserves a building constructed in 1863, has spent three decades teaching visitors that the walls of a five-dollar-a-month flat hold biographies in their pigment layers. The ceiling holds more: it holds the budget.</p>
+
+  <h3>What this zine covers</h3>
+  <p>Four pages, four eras, four ceiling assemblies. Read in order or flip back to front. Page 2 is the horsehair era. Page 3 is the Plaster of Paris and the gypsum transition. Page 4 is the postwar drywall question. Each page asks what the material did to the people underneath it.</p>
+</article>
+
+<!-- PAGE 2 -->
+<article class="zine-page" data-page="PAGE 02 / c.1840–1900">
+  <h2>Horsehair, Lime &amp; the <em>Slaughterhouse</em> Economy</h2>
+
+  <p>The standard tenement ceiling of the nineteenth century was a three-coat lime plaster system applied over riven wood lath. The lath strips, usually eastern white pine or hemlock, were nailed perpendicular to the joists with a calculated gap so plaster could ooze through and form a "key" on the back side. That key is what held the ceiling up for forty, eighty, sometimes a hundred and twenty years. When ceilings drop in old tenements today, the most common failure is not the plaster itself but the keys snapping off where mice, vibration, and time have done their slow work.</p>
+
+  <p>The binder was lime putty, slaked from quicklime barged down from kilns along the Hudson Valley, mixed with sharp sand and reinforced with animal hair. The hair came from the city's enormous slaughterhouse and tanning district, which by 1860 stretched from Sweeney's Shambles near the East River up through what is now Murray Hill. According to the <a href="https://en.wikipedia.org/wiki/Lime_plaster">history of lime plaster</a>, cattle hair was preferred for the brown coat because it was longer and more elastic than hog bristle. Plasterers picked through the loose hair on the floor of the shop, twisting clumps to test their give.</p>
+
+  <div class="card-tilt">
+    <h4>Field Note: A Brown Coat</h4>
+    <p style="margin:0">Strip a section of a 1880s parlor ceiling at, say, 97 Stanton Street and you'll find three distinct layers: a scratch coat with visible hair, a brown coat about 3/8" thick, and a thin finish coat of pure lime burnished to a soapstone smoothness. The whole assembly weighs roughly nine pounds per square foot. A 12-by-15 parlor ceiling weighs as much as a refrigerator.</p>
+  </div>
+
+  <p>That weight matters socially. A 180-square-foot section of ceiling represented about 1,600 pounds suspended over the heads of a family that, in the 1890 census tracts of the Tenth Ward, often numbered seven to nine people in two rooms. The plasterer who installed it was usually Irish or, after 1880, increasingly Italian, working ten-hour days for $2.50 to $3.50, and racing piecework rates that incentivized thin keys.</p>
+
+  <div class="pq">"The plaster is the <span>cheapest</span> honesty in the building."</div>
+
+  <h3>Pressed tin: a parallel ceiling</h3>
+  <p>By the 1890s, embossed sheet-tin ceilings began appearing in commercial spaces and in the better-class flats above storefronts on Bleecker, Hester, and First Avenue. Tin was sold as fireproof, hygienic, and ornamental, all of which mattered after the 1867 Tenement House Act made landlords nervously aware of inspections. A tin ceiling did not fall in chunks; it sagged, rusted, and dripped. It rewrote the failure mode without solving the underlying problem of cheap joist spans.</p>
+</article>
+
+<!-- PAGE 3 -->
+<article class="zine-page" data-page="PAGE 03 / 1900–1940">
+  <h2>Gypsum Arrives, <em>Horsehair</em> Quietly Leaves</h2>
+
+  <p>Between roughly 1905 and the First World War, the New York plastering trade quietly converted from lime to gypsum. The shift had nothing to do with aesthetics. Gypsum set faster, allowing a plasterer to do three rooms a day instead of two, and the supply was industrial: rail-borne from quarries in western New York and from the enormous gypsum deposits the United States Gypsum Company began consolidating in 1902.</p>
+
+  <table class="spec">
+    <thead>
+      <tr><th>Era</th><th>Binder</th><th>Reinforcement</th><th>Set Time</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1850–1900</td><td>Lime putty</td><td>Cattle hair</td><td>Days to weeks</td></tr>
+      <tr><td>1905–1920</td><td>Mixed lime/gypsum</td><td>Hair + sisal</td><td>Hours</td></tr>
+      <tr><td>1920–1940</td><td>Gypsum gauging</td><td>Sisal, jute, or none</td><td>30–90 min</td></tr>
+      <tr><td>1940–1960</td><td>Gypsum lath board + skim</td><td>Paper face</td><td>Same day</td></tr>
+      <tr><td>1960–present</td><td>Gypsum board (drywall)</td><td>Paper + joint tape</td><td>Hung dry</td></tr>
+    </tbody>
+  </table>
+
+  <p>What does this mean socially? The horsehair ceiling was a craft object embedded in a citywide network: slaughterhouse, hair-picker, lime kiln, lath splitter, plasterer's helper, journeyman. By 1925 most of those nodes were gone. The hair-picker on Pearl Street had vanished. The journeyman plasterer was now using a pre-mixed product trucked from a Brooklyn warehouse and applied over rock-lath boards from a factory in Oakfield, New York.</p>
+
+  <h3>The "rock lath" transition</h3>
+  <p>Between 1915 and 1935 the wood lath disappeared and was replaced by gypsum lath: small panels of compressed gypsum faced with paper, nailed up like wainscot, then skim-coated. This is the ceiling lurking inside most of the buildings that went up during the great pre-war apartment boom in the Bronx along the Grand Concourse, in Washington Heights, in Crown Heights, and in the Jackson Heights garden apartments. If a ceiling in one of these buildings has a peculiar gridded sag pattern, that grid is the gypsum-lath joints telegraphing through ninety years of paint.</p>
+
+  <div class="card-tilt right">
+    <h4>Who Lived Below</h4>
+    <p style="margin:0">The Bronx Grand Concourse buildings of 1925–1935 were marketed to a Jewish middle class moving up from the Lower East Side. The ceilings in those apartments were a status object: smooth, ornamented at the cove, sometimes with a plaster medallion at the chandelier. The medallion was almost always stamped in a Long Island City shop and glued, not modeled in place. The ornament had become a commodity.</p>
+  </div>
+
+  <p>The Landmarks Preservation Commission's documentation of the Grand Concourse historic district, available through the <a href="https://www.nyc.gov/site/lpc/index.page">city's preservation records</a>, is one of the better paper trails for tracing this material shift, because the building applications filed at the Department of Buildings in the 1920s often specify "gypsum lath" by brand name. You can watch the brand names drift across a single block over a five-year period.</p>
+</article>
+
+<!-- PAGE 4 -->
+<article class="zine-page" data-page="PAGE 04 / 1945–PRESENT">
+  <h2>Drywall, <em>Popcorn</em> &amp; the Postwar Cheapening</h2>
+
+  <p>The single largest material rupture in the history of New York ceilings is the postwar shift to gypsum board, hung dry without any wet plaster at all. The City Housing Authority experimented with drywall in projects as early as the late 1940s, and by the time the Mitchell-Lama program started funding middle-income housing in 1955, drywall ceilings were standard in new construction. A drywall ceiling weighs about half what a three-coat plaster ceiling weighs, costs roughly a quarter as much to install, and fails differently: it does not key off; it sags between fasteners, or the paper face delaminates after a leak, or a screw pops.</p>
+
+  <p>The social context: postwar New York was building for a different population. Co-op City in the northeast Bronx, completed in 1973, housed 55,000 people in 35 high-rise buildings. The ceilings there are gypsum board, taped, sprayed with the acoustic "popcorn" texture that became universal in American multifamily construction between 1960 and 1978. That texture, which often contained chrysotile asbestos until a partial ban took effect in the late 1970s, is now its own remediation industry. A 2019 <a href="https://www.nytimes.com/2019/05/16/realestate/co-op-city-bronx.html">New York Times piece on Co-op City</a> noted that residents still describe their ceilings by texture more than by color.</p>
+
+  <div class="pq">A drywall ceiling does not <span>key off</span>. It surrenders.</div>
+
+  <h3>The split inventory</h3>
+  <p>The city now contains two parallel ceiling inventories that age in completely different ways. The pre-1940 plaster stock, found in the roughly 30,000 tenement-era buildings still standing south of 96th Street and across the older Brooklyn and Bronx neighborhoods, ages by losing its mechanical keys. The post-1955 drywall stock, found in NYCHA developments, Mitchell-Lama buildings, and most postwar co-ops, ages by losing its fasteners and its paper bond. The repair trades are different. The diagnostic vocabulary is different. The dust is different.</p>
+
+  <div class="sidebar">
+    <h4>Quick Glossary</h4>
+    <ul>
+      <li><strong>KEY</strong> — the lobe of plaster that squeezes through wood lath and hardens behind it; the thing that actually holds an old ceiling up.</li>
+      <li><strong>BROWN COAT</strong> — the middle, hair-reinforced layer in three-coat plaster.</li>
+      <li><strong>ROCK LATH</strong> — small gypsum panels used 1915–1950 as a base for skim plaster.</li>
+      <li><strong>SCREW POP</strong> — the characteristic round blister on drywall where a fastener has worked loose.</li>
+      <li><strong>POPCORN</strong> — sprayed acoustic ceiling texture, c.1960–1978, frequently asbestos-bearing in that window.</li>
+    </ul>
+  </div>
+
+  <h3>Coda: looking up as social practice</h3>
+  <p>To stand in the middle of a railroad flat on East 7th Street and look up at a ceiling that has been painted thirty-one times since 1889 is to read a stratigraphy of who could afford lead white in 1910, who could afford cheap calcimine in the Depression, who painted with rented rollers in 1962, and who, in 2014, finally stripped it back to the brown coat to expose the hair. The hair is still there. It is still cattle. It still came from a slaughterhouse that is now an ad agency. The ceiling remembers.</p>
+
+  <hr class="rule">
+
+  <p style="font-family:'DM Mono',monospace;font-size:13px;line-height:1.6">Further reading in print: Andrew Dolkart, <em>Biography of a Tenement House in New York City</em> (Center for American Places, 2007); Richard Plunz, <em>A History of Housing in New York City</em> (Columbia University Press, revised 2016); and the building application archive maintained by the NYC Department of Records at 31 Chambers Street, where pre-1938 plans for most surviving tenements can be pulled on microfilm.</p>
+</article>
+
+<footer class="colophon">
+  <h5>Colophon</h5>
+  <p style="margin:0 0 10px"><strong>HORSEHAIR QUARTERLY</strong> is an independent zine on the material culture of New York City housing, printed in editions of 250 on a two-color Risograph at a shared studio in Sunset Park, Brooklyn. Type: Archivo Black, Space Grotesk, DM Mono. Ink colors this issue: Teal &amp; Fluorescent Orange, with Pink overprint on the masthead.</p>
+  <p style="margin:0 0 10px">This issue was assembled from notes taken between 2019 and 2024 in walking surveys of the Lower East Side, the Grand Concourse, East New York, and Co-op City. Errors are the editor's own. Corrections welcome on the back of any postcard.</p>
+  <p style="margin:0">No advertising. No sponsors. No legal advice offered or implied. Look up more often.</p>
+</footer>
+
+</div>
+</body>
+</html>
