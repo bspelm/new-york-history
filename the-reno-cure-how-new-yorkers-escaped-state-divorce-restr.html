@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Reno Cure: How New Yorkers Escaped State Divorce Restrictions</title>
+<meta name="description" content="From the 1910s through the 1960s, New Yorkers boarded trains west to satisfy Nevada's six-week residency and dissolve marriages their home state refused to end. A cultural history of the Reno divorce colony.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0F0F10;
+    --surface: #17171A;
+    --ink: #C9C9C0;
+    --ink-strong: #E8E6DC;
+    --muted: #7F7F76;
+    --accent: #E89E5C;
+    --rule: #2A2A2E;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+  body {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 5rem;
+  }
+  header.mast {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1.25rem;
+    margin-bottom: 2.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  header.mast .name { color: var(--ink-strong); }
+  header.mast .name em { font-style: normal; color: var(--accent); }
+
+  h1 {
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: clamp(1.9rem, 5.2vw, 2.85rem);
+    line-height: 1.15;
+    color: var(--ink-strong);
+    margin: 0 0 1rem;
+    letter-spacing: -0.01em;
+  }
+  .deck {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 0 0 2.5rem;
+    max-width: 32em;
+  }
+  .byline {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 3rem;
+  }
+  .byline span { color: var(--accent); }
+
+  article p {
+    margin: 0 0 1.4em;
+  }
+  article p:first-of-type::first-letter {
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: 3.6em;
+    float: left;
+    line-height: 0.9;
+    margin: 0.08em 0.09em -0.05em 0;
+    color: var(--accent);
+  }
+  h2 {
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--ink-strong);
+    margin: 3rem 0 1.25rem;
+    line-height: 1.25;
+  }
+  h2::before {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 1px;
+    background: var(--accent);
+    margin-bottom: 1rem;
+    opacity: 0.6;
+  }
+  a {
+    color: var(--ink-strong);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  a:hover { color: var(--accent); }
+  em { color: var(--ink-strong); }
+  blockquote {
+    margin: 2.25rem 0;
+    padding: 0.25rem 0 0.25rem 1.4rem;
+    border-left: 2px solid var(--accent);
+    font-style: italic;
+    color: var(--ink-strong);
+    font-size: 1.08rem;
+  }
+  blockquote cite {
+    display: block;
+    margin-top: 0.6rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-style: normal;
+  }
+  footer.colophon {
+    margin-top: 5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  footer.colophon .line { margin-bottom: 0.35rem; }
+
+  @media (max-width: 768px) {
+    .wrap { padding: 2rem 1.15rem 3.5rem; }
+    body { font-size: 1rem; line-height: 1.7; }
+    .deck { font-size: 1.05rem; }
+    h2 { font-size: 1.3rem; margin-top: 2.25rem; }
+    header.mast { font-size: 0.65rem; }
+    article p:first-of-type::first-letter { font-size: 3.1em; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="mast">
+  <div class="name">The Sagebrush <em>Notebook</em></div>
+  <div>No. 14 · Long Reads in American Social History</div>
+</header>
+
+<h1>The Reno Cure</h1>
+<p class="deck">How six weeks of desert residency became the escape hatch from New York's most rigid marriage laws, and built a small economy of ranches, hotels, and courthouse regulars along the way.</p>
+<p class="byline">Essay · <span>Cultural History</span> · Filed from Washoe County</p>
+
+<article>
+
+<p>For roughly half a century, the fastest way out of a New York marriage ran through a Pullman car headed west. Between the passage of Nevada's short-residency statute in 1931 and the arrival of no-fault reform in the early 1970s, the Empire State kept adultery on its books as effectively the sole ground for absolute divorce, and thousands of its residents responded by boarding trains, then planes, for the high desert. To understand why the migration made sense, it helps to grasp the domestic law they were fleeing — the doctrines around fault, corroboration, and even the technical question of <a href="https://sjc1.vultrobjects.com/new-york/the-evolution-of-divorce-law-in-new-york-state.html">who is the plaintiff in a divorce case</a> when both spouses privately wanted the marriage over. Nevada asked none of those questions. It asked only that you sleep within its borders for six weeks and swear you meant to stay.</p>
+
+<p>The residency clock had not always been so short. Nevada set the bar at six months in 1911, dropped it to three months in 1927, and finally to six weeks in 1931, the same legislative session that legalized casino gambling. The rival jurisdictions of the moment (Arkansas at ninety days, Idaho and Florida at various intervals) never fully caught up. By the mid-1930s the noun "Reno" had become a verb. To be "Reno-vated" was to be freshly single. Society columns in the <em>Herald Tribune</em> tracked departures from Grand Central the way sports pages tracked pitchers.</p>
+
+<h2>The Six-Week Cure</h2>
+
+<p>The mechanics were nearly ritual. A New Yorker with means would step off the City of San Francisco at the Reno depot, take a room at the Riverside Hotel on Virginia Street, or board with one of the dude ranches ringing the Truckee Meadows, and begin the count. Washoe County District Court kept a docket that on some Monday mornings in the late 1930s read like a Park Avenue address book. The philosopher and novelist Clare Boothe Luce came through. So did Mary Pickford. So did the wife of a Vanderbilt, the wife of a Rockefeller cousin, and a long roster of names the columnists could only reach by initial.</p>
+
+<p>Middle-class New Yorkers arrived too, and in greater numbers than the myth of the "millionaires' divorce" allows. A schoolteacher from Astoria could, by the late 1940s, fly TWA to Reno for a fare that took some saving but not a fortune, and find room and board at a working ranch for roughly seven dollars a day. The <a href="https://en.wikipedia.org/wiki/Reno_divorce">social history of the Reno divorce</a> records dozens of such establishments — the Flying M E, the Pyramid Lake Ranch, the Washoe Pines — that made their living almost entirely from a rotating cast of six-week guests. Ranch operators learned to keep a lawyer on retainer, a stenographer on call, and an unspoken policy of never asking about the marriage that was ending upstairs.</p>
+
+<blockquote>
+"The dude wrangler said he had learned three things about the Eastern ladies: they wanted to see a coyote, they wanted to buy a squash-blossom necklace, and after the fifth week they wanted the paperwork to be exactly right."
+<cite>— Field notes, Washoe Pines, 1952</cite>
+</blockquote>
+
+<h2>What the Courthouse Sold</h2>
+
+<p>The Washoe County Courthouse, a Classical Revival building completed in 1911 and still standing at 117 South Virginia Street, became the physical anchor of the industry. Local attorneys quoted flat fees — a hundred dollars was common in the 1930s, three or four hundred by the 1950s — and offered a service that was equal parts legal work and stage management. Uncontested filings could be walked from the clerk's window to a judge's chambers in under an hour. The plaintiff would testify, briefly, that she intended to remain a Nevada resident. She would then, in most cases, cross the street to the Truckee River, drop her wedding ring into the water from the Virginia Street Bridge, and catch the evening train east.</p>
+
+<p>The bridge itself became a folk landmark. Cinematographers filmed it. Postcards sold it. When the city rebuilt the span in 2016, divers pulled up costume jewelry by the pound but very few gold bands; the ring-throwing had always been more theater than sacrifice, and by the 1940s the jewelers on Sierra Street were quietly selling brass substitutes for exactly that purpose.</p>
+
+<h2>The Legal Fiction Everyone Knew About</h2>
+
+<p>New York courts were not oblivious. The state's own bar published exasperated notes throughout the 1940s about the ease with which "Nevada decrees" were being brought home and used to remarry, and the U.S. Supreme Court twice heard cases (<em>Williams v. North Carolina</em> in 1942 and again in 1945) that tested whether one state had to honor another's divorce when the residency looked like a fiction. The rulings held that a bona fide domicile was required, but that the presumption of good faith cut in the migrant's favor unless the abandoned spouse actively challenged it. Most did not. The system worked, in other words, because nearly everyone involved wanted it to.</p>
+
+<p>What is often forgotten is how visible all of this was. The <em>New York Times</em> ran a Sunday feature on Reno divorce ranches in 1937 that reads today almost as travel writing: bunkhouses, cattle drives, and a lawyer's office at the end of the porch. Playwrights mined the setting. Clare Boothe Luce's <em>The Women</em> (1936) sets its second act at a Reno ranch, and its Broadway run and 1939 MGM film adaptation seeded the six-week cure into national imagination more effectively than any statute could. By the time the film aired on late-night television in the 1960s, "going to Reno" was shorthand a nine-year-old could parse.</p>
+
+<h2>The Cottage Economy</h2>
+
+<p>The trade sustained a whole layer of Reno's working population. Cab drivers who worked the depot memorized the ranch schedules. Beauty parlors on West Second Street ran a Tuesday-morning discount for "six-week ladies." The Riverside's dining room reserved a corner known informally as the "waiting room," where women in the final week before their court date sat with novels and cigarettes. Photographers stationed themselves on the courthouse steps because the Eastern papers paid for the picture of a socialite descending them.</p>
+
+<p>Divorce, in short, was the third pillar of the Nevada economy in these years, behind mining and gaming and comfortably ahead of ranching. Estimates compiled by the University of Nevada, Reno's Special Collections put the peak years around 1946, when returning servicemen and their wartime spouses drove Washoe County to more than eleven thousand decrees in a single twelve-month period. The county's total population then was under sixty thousand.</p>
+
+<h2>The Slow End</h2>
+
+<p>What killed the Reno cure was not competition from other states so much as reform at home. Alabama began offering quickie decrees in the 1950s. Mexico, and specifically the city of Juárez, drew off the more scandal-averse in the 1960s. But the decisive event was New York's own 1966 Divorce Reform Law, which finally broadened grounds beyond adultery to include cruel and inhuman treatment, abandonment, and confinement, followed by the true no-fault revolution that swept most states after California's 1969 statute. Once a New Yorker could obtain a divorce at 60 Centre Street on grounds that reflected the actual failure of the marriage, the six-week train trip stopped making sense.</p>
+
+<p>The ranches closed one by one. The Riverside limped through the 1970s and shut its doors as a hotel in 1986; it reopened later as artists' lofts, which is what it remains. The Washoe County Courthouse still handles divorces, but the dockets are local now, and the clerks no longer hand out mimeographed maps to the better dude ranches.</p>
+
+<p>What lingers is the cultural residue. Any American over sixty will still recognize "she went to Reno" as a phrase with a specific meaning. It is preserved in Cukor's film, in Arthur Miller's <em>The Misfits</em> (written partly during Miller's own 1960 Nevada residency and filmed on location outside Dayton), and in the folk memory of a generation of women who quietly used a western loophole to end marriages their home state would have forced them to endure. For a certain slice of twentieth-century America, the freedom to divorce was, literally, a train ride.</p>
+
+</article>
+
+<footer class="colophon">
+  <div class="line">THE SAGEBRUSH NOTEBOOK · Long Reads in American Social History</div>
+  <div class="line">Essays filed irregularly. No advertising, no syndication, no reprint license.</div>
+  <div class="line">Set in Newsreader and Inter. Read best after dark.</div>
+</footer>
+
+</div>
+</body>
+</html>
