@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comparative Report: Assault Grading in NY, NJ, CT, and MA</title>
+<meta name="description" content="A structured field comparison of assault statutes across four northeastern states, examining how each jurisdiction defines, grades, and sentences the offense.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #E5E5E5;
+    --panel: #EDEDEA;
+    --ink: #2A2A2A;
+    --rule: #9A9A95;
+    --signal: #FF6B1F;
+    --dim: #6A6A65;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+  body {
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .sheet {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 48px 56px 96px;
+    background: var(--panel);
+    min-height: 100vh;
+    border-left: 1px solid var(--rule);
+    border-right: 1px solid var(--rule);
+  }
+  .doc-header {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 18px;
+    margin-bottom: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--dim);
+  }
+  .doc-header .id { color: var(--signal); font-weight: 600; }
+  .doc-header .right { text-align: right; }
+  h1 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+  }
+  .subtitle {
+    font-family: 'IBM Plex Serif', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--dim);
+    margin: 0 0 40px;
+    max-width: 640px;
+  }
+  .abstract {
+    background: #DCDCD6;
+    border-left: 4px solid var(--signal);
+    padding: 20px 24px;
+    margin: 0 0 44px;
+    font-size: 15px;
+  }
+  .abstract-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--signal);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .abstract p { margin: 0; }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-bottom: 48px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+  }
+  .meta-grid > div {
+    background: var(--panel);
+    padding: 12px 14px;
+  }
+  .meta-grid .label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--dim);
+    font-size: 9px;
+    margin-bottom: 4px;
+  }
+  .meta-grid .value { color: var(--ink); font-weight: 500; }
+  h2.section {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--signal);
+    border-top: 1px solid var(--ink);
+    padding-top: 14px;
+    margin: 56px 0 20px;
+  }
+  ol.findings {
+    list-style: none;
+    counter-reset: finding;
+    padding: 0;
+    margin: 0;
+  }
+  ol.findings > li {
+    counter-increment: finding;
+    padding: 24px 0 24px 72px;
+    border-bottom: 1px dashed var(--rule);
+    position: relative;
+  }
+  ol.findings > li:last-child { border-bottom: none; }
+  ol.findings > li::before {
+    content: "§ " counter(finding, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 26px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--signal);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  ol.findings h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    line-height: 1.3;
+  }
+  ol.findings p {
+    margin: 0 0 12px;
+    font-size: 15.5px;
+  }
+  ol.findings p:last-child { margin-bottom: 0; }
+  a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--signal); }
+  table.compare {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+  }
+  table.compare th, table.compare td {
+    border: 1px solid var(--rule);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.compare th {
+    background: #2A2A2A;
+    color: #EDEDEA;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 10px;
+  }
+  table.compare td:first-child {
+    background: #DCDCD6;
+    font-weight: 600;
+  }
+  .figure-caption {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--dim);
+    margin: 4px 0 24px;
+  }
+  .callout {
+    background: var(--ink);
+    color: var(--panel);
+    padding: 18px 22px;
+    margin: 18px 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+  .callout .cl-label {
+    color: var(--signal);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 6px;
+  }
+  footer.colophon {
+    margin-top: 80px;
+    border-top: 2px solid var(--ink);
+    padding-top: 20px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--dim);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  footer.colophon .right { text-align: right; }
+  .stamp {
+    display: inline-block;
+    border: 1.5px solid var(--signal);
+    color: var(--signal);
+    padding: 4px 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    transform: rotate(-2deg);
+    margin-top: 4px;
+  }
+  @media (max-width: 768px) {
+    .sheet { padding: 24px 20px 60px; }
+    h1 { font-size: 26px; }
+    .subtitle { font-size: 16px; }
+    .doc-header { grid-template-columns: 1fr; gap: 4px; }
+    .doc-header .right { text-align: left; }
+    .meta-grid { grid-template-columns: repeat(2, 1fr); }
+    ol.findings > li { padding-left: 0; padding-top: 40px; }
+    ol.findings > li::before { top: 12px; }
+    table.compare { font-size: 11px; }
+    table.compare th, table.compare td { padding: 6px 7px; }
+    footer.colophon { grid-template-columns: 1fr; }
+    footer.colophon .right { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="doc-header">
+    <div><span class="id">REPORT / NE-04</span> &nbsp;·&nbsp; COMPARATIVE STATUTORY REVIEW</div>
+    <div class="right">FIELD SERIES · VOL. 7 · ISSUE 02</div>
+  </div>
+
+  <h1>How New York's Assault Tiers Compare to Other Northeastern State Codes</h1>
+  <p class="subtitle">A side-by-side reading of the assault provisions in four Article-II states, with attention to grading thresholds, mental states, and the enhancement schemes that make each jurisdiction structurally distinct.</p>
+
+  <div class="abstract">
+    <span class="abstract-label">Abstract / Scope</span>
+    <p>This report walks the assault ladders of New York, New Jersey, Connecticut, and Massachusetts as they read in the 2023 official codes. It does not treat sentencing outcomes or plea patterns; the object is the statutory architecture itself. Findings are numbered 01–08 and grouped by structural feature rather than by state.</p>
+  </div>
+
+  <div class="meta-grid">
+    <div><div class="label">Jurisdictions</div><div class="value">NY / NJ / CT / MA</div></div>
+    <div><div class="label">Code Year</div><div class="value">2023 Official</div></div>
+    <div><div class="label">Method</div><div class="value">Textual comparison</div></div>
+    <div><div class="label">Source Base</div><div class="value">Public statutes</div></div>
+  </div>
+
+  <h2 class="section">§§ Numbered Findings</h2>
+
+  <ol class="findings">
+
+    <li>
+      <h3>New York uses a three-degree ladder; its neighbors do not</h3>
+      <p>New York organizes assault into a compact three-tier structure under Penal Law Article 120: third degree (§120.00) as a Class A misdemeanor, second degree (§120.05) as a Class D violent felony, and first degree (§120.10) as a Class B violent felony. The classifications get deeper when the analysis moves to <a href="https://sjc1.vultrobjects.com/new-york/what-is-considered-aggravated-assault-under-new-york-state-law.html">aggravated assault NY</a> variants keyed to victim status (police officers, judges, children under eleven) or use of a deadly weapon. New Jersey collapses everything into a single "Aggravated Assault" statute (N.J.S.A. 2C:12-1) with numerous internal subsections rather than a graded ladder. Connecticut splits its offenses across a broader continuum, from Assault in the Third Degree (Conn. Gen. Stat. §53a-61) up through Assault in the First Degree (§53a-59). Massachusetts, uniquely, retains the common-law distinction between "assault" and "assault and battery" as separate statutory offenses under Chapter 265, §13A. The four codes are not merely worded differently; they classify conduct at four different levels of granularity.</p>
+    </li>
+
+    <li>
+      <h3>Mental-state requirements diverge on reckless conduct</h3>
+      <p>Every state in this comparison recognizes intentional injury as the highest-culpability form of assault. Divergence begins at recklessness. New York permits a reckless mental state for third-degree assault (§120.00(2)) and for a form of second-degree assault involving deadly weapons (§120.05(4)). Connecticut treats reckless infliction of serious physical injury as second-degree conduct (§53a-60(a)(3)) but requires "extreme indifference to human life" to elevate it to first degree. New Jersey similarly grades reckless bodily-injury cases as third- or fourth-degree offenses depending on whether a deadly weapon is used. Massachusetts, by statute, does not use a graded recklessness scheme at all; recklessness enters the analysis through the "assault and battery causing serious bodily injury" enhancement in G.L. c. 265, §13A(b), which functions as an aggravator rather than a mens rea rung.</p>
+    </li>
+
+    <li>
+      <h3>The definition of "serious physical injury" is not portable</h3>
+      <table class="compare">
+        <thead><tr><th>State</th><th>Statutory Term</th><th>Definitional Anchor</th></tr></thead>
+        <tbody>
+          <tr><td>New York</td><td>Serious physical injury</td><td>PL §10.00(10): substantial risk of death, protracted disfigurement, or protracted impairment</td></tr>
+          <tr><td>New Jersey</td><td>Serious bodily injury</td><td>N.J.S.A. 2C:11-1(b): substantial risk of death, permanent disfigurement, protracted loss</td></tr>
+          <tr><td>Connecticut</td><td>Serious physical injury</td><td>§53a-3(4): serious disfigurement, serious impairment, or substantial risk of death</td></tr>
+          <tr><td>Massachusetts</td><td>Serious bodily injury</td><td>c. 265 §13A(c): permanent disfigurement, loss of function, or substantial risk of death</td></tr>
+        </tbody>
+      </table>
+      <p class="figure-caption">Fig. 03A · Comparative definitional language, redacted for brevity.</p>
+      <p>The four definitions look nearly identical on casual reading, but the operative words differ. New York and Connecticut use "protracted"; New Jersey and Massachusetts use "permanent." A protracted impairment can be temporary in the medical sense, provided it lasts a non-trivial period. Permanence is a stiffer requirement. This is the sort of textual difference that decides whether a fractured orbital bone is charged as a lower-tier or upper-tier offense.</p>
+    </li>
+
+    <li>
+      <h3>New Jersey's deadly-weapon uplift is structural, not situational</h3>
+      <p>Under N.J.S.A. 2C:12-1(b)(2), pointing a firearm at another person is itself second-degree aggravated assault, regardless of injury. This is a categorical uplift built into the statute rather than a sentencing enhancement. New York achieves a similar result through §120.05(2), but only where the actor intends to cause physical injury by means of a deadly weapon or dangerous instrument. Connecticut reaches the same conduct through the reckless-endangerment statute (§53a-63) unless intent to cause injury is proved. Massachusetts uses a distinct offense, "assault by means of a dangerous weapon," codified separately at c. 265 §15B. Four jurisdictions, four architectural choices for the same underlying act.</p>
+    </li>
+
+    <li>
+      <h3>Victim-status enhancements: New York is the most granular</h3>
+      <p>New York's Article 120 enumerates roughly two dozen protected-victim categories, from peace officers and firefighters (§120.08) to sanitation workers, traffic enforcement agents, process servers, and school crossing guards (§120.05(11)-(11-a)). This granularity is not matched elsewhere in the region. Connecticut concentrates its protections in §53a-167c (assault on public safety personnel) with a smaller list. New Jersey addresses law-enforcement victims in 2C:12-1(b)(5) and adds specific provisions for utility and DYFS workers. Massachusetts handles police-officer assaults through c. 265 §13D but does not enumerate the same breadth of civil-service roles. The <a href="https://en.wikipedia.org/wiki/Consolidated_Laws_of_New_York">Consolidated Laws of New York</a> effectively function as a running inventory of the roles the Legislature has chosen to elevate; the neighbor states operate at a lower resolution.</p>
+    </li>
+
+    <li>
+      <h3>Massachusetts alone preserves an "assault" that is not "battery"</h3>
+      <div class="callout">
+        <span class="cl-label">Structural Note</span>
+        In Massachusetts, a completed touching is "assault and battery" under c. 265 §13A. An attempted or threatened touching is "assault." The two are separate offenses with separate elements. The other three states have long since merged the concepts into a unified "assault" that encompasses both attempts and completed injuries.
+      </div>
+      <p>This is not a curiosity of drafting; it is a live doctrinal difference. A defendant in Massachusetts may face conviction for assault on a theory of attempted battery or on a theory of immediately threatened battery. Prosecutors must plead which. Nothing analogous is required in New York, where §120.00(1) treats intent-to-cause-injury as satisfied by the causing of injury itself. Reference discussions of the doctrine appear in the model instructions maintained by the <a href="https://www.mass.gov/lists/model-jury-instructions-for-criminal-offenses-tried-in-district-court">Massachusetts trial court</a>.</p>
+    </li>
+
+    <li>
+      <h3>Sentencing exposure at the top rung diverges sharply</h3>
+      <table class="compare">
+        <thead><tr><th>State</th><th>Top-Rung Offense</th><th>Max Term</th></tr></thead>
+        <tbody>
+          <tr><td>New York</td><td>Assault 1st (Class B violent)</td><td>25 years</td></tr>
+          <tr><td>New Jersey</td><td>Aggravated Assault, 2nd degree</td><td>10 years</td></tr>
+          <tr><td>Connecticut</td><td>Assault 1st (Class B felony)</td><td>20 years</td></tr>
+          <tr><td>Massachusetts</td><td>ABDW causing SBI</td><td>15 years</td></tr>
+        </tbody>
+      </table>
+      <p class="figure-caption">Fig. 07A · Statutory maxima on the highest non-homicide assault charge.</p>
+      <p>New York carries the heaviest exposure. This reflects the fact that first-degree assault under §120.10 was drafted to sit just below attempted murder and to capture the same conduct that in other jurisdictions is spread across two or three separately graded offenses. New Jersey's ceiling is lower because its "aggravated assault" is functionally a mid-range felony; conduct that in New York would trigger a Class B violent felony often triggers only a second-degree offense across the Hudson.</p>
+    </li>
+
+    <li>
+      <h3>Choke-hold and strangulation provisions were adopted at different speeds</h3>
+      <p>New York enacted its strangulation statute in 2010 (PL §§121.11–121.13), creating a graded three-offense scheme for criminal obstruction of breathing. Connecticut followed with §53a-64aa in 2007 and revised the framework in 2019. Massachusetts added c. 265 §15D covering strangulation and suffocation in 2014. New Jersey folded strangulation conduct into its aggravated-assault statute as subsection 2C:12-1(b)(13) rather than creating a standalone offense. The four states therefore reach substantially the same conduct through four different structural devices: New York with a dedicated Article 121, Connecticut with a bolted-on section, Massachusetts with a discrete chapter provision, and New Jersey with a subsection inside the main assault statute. When practitioners cross state lines, the offense that is called "second-degree strangulation" in Albany, "assault in the second degree" in Hartford, and "aggravated assault" in Trenton may cover very similar physical conduct.</p>
+    </li>
+
+  </ol>
+
+  <h2 class="section">§§ Closing Observation</h2>
+  <p style="font-family: 'IBM Plex Serif', serif; font-size: 16px; line-height: 1.7; max-width: 680px;">The four assault codes examined here read, on their surfaces, as siblings drafted from a common Model Penal Code inheritance. The comparison shows how much has drifted in a half century of independent legislative revision. Where New York adds a subsection, New Jersey adds a subclause; where Connecticut writes a new offense, Massachusetts amends an existing one. Practitioners reading across state lines should treat term-of-art vocabulary ("serious injury," "dangerous weapon," "recklessly") as jurisdiction-specific until proven otherwise.</p>
+
+  <div class="stamp">FIELD REPORT · REVIEWED</div>
+
+  <footer class="colophon">
+    <div>
+      NORTHEAST STATUTES DESK<br>
+      Field Series · Comparative Volume<br>
+      Set in IBM Plex · Composed digitally
+    </div>
+    <div class="right">
+      Document ref: NE-04 / A120<br>
+      Distribution: Open reference<br>
+      No advertising · No sponsorship
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
