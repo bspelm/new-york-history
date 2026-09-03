@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fifty Grounds, Fifty States: A Comparative Field Guide to Annulment</title>
+<meta name="description" content="A comparative survey of annulment grounds across U.S. state codes, with attention to physical incapacity, non-consummation, and how New York's narrow framework sits against permissive and restrictive regimes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3EBD8;
+    --ink: #1A1A1A;
+    --spot1: #E91E63; /* hot pink */
+    --spot2: #2196F3; /* electric blue */
+    --spot1-mix: rgba(233,30,99,0.85);
+    --spot2-mix: rgba(33,150,243,0.85);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    background-image:
+      radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
+      radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 2px;
+  }
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 40px 28px 80px;
+    position: relative;
+  }
+  .masthead {
+    border-top: 8px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+    padding: 18px 0 14px;
+    margin-bottom: 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .masthead .logo {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--spot1);
+    mix-blend-mode: multiply;
+  }
+  .masthead .issue {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--spot2);
+    mix-blend-mode: multiply;
+  }
+  h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(2.4rem, 7vw, 4.4rem);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  h1 .stamp {
+    display: inline-block;
+    background: var(--spot1);
+    color: var(--paper);
+    padding: 2px 12px 6px;
+    mix-blend-mode: multiply;
+    transform: rotate(-2deg);
+  }
+  h1 .stamp.blue {
+    background: var(--spot2);
+    transform: rotate(1.5deg);
+  }
+  .kicker {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--spot2);
+    margin-bottom: 18px;
+    mix-blend-mode: multiply;
+  }
+  .deck {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.45;
+    max-width: 640px;
+    margin: 20px 0 40px;
+    font-weight: 500;
+    border-left: 5px solid var(--spot1);
+    padding-left: 16px;
+  }
+  .intro p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0 0 1.1em;
+  }
+  .intro a {
+    color: var(--ink);
+    background: linear-gradient(180deg, transparent 62%, var(--spot1-mix) 62%);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .intro a:hover { background: var(--spot1); color: var(--paper); }
+  a.auth {
+    color: var(--spot2);
+    text-decoration: underline;
+    text-decoration-color: var(--spot2);
+    text-underline-offset: 3px;
+    mix-blend-mode: multiply;
+  }
+  ol.numbered {
+    counter-reset: item;
+    list-style: none;
+    padding: 0;
+    margin: 40px 0 0;
+  }
+  ol.numbered > li {
+    counter-increment: item;
+    position: relative;
+    padding: 26px 22px 22px 78px;
+    margin-bottom: 26px;
+    background: var(--paper);
+    border: 2.5px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--spot2-mix);
+  }
+  ol.numbered > li:nth-child(even) {
+    box-shadow: -6px 6px 0 var(--spot1-mix);
+    transform: rotate(-0.4deg);
+  }
+  ol.numbered > li:nth-child(3n) {
+    transform: rotate(0.5deg);
+  }
+  ol.numbered > li::before {
+    content: counter(item, decimal-leading-zero);
+    position: absolute;
+    left: 12px;
+    top: 18px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2.4rem;
+    color: var(--spot1);
+    mix-blend-mode: multiply;
+    line-height: 1;
+  }
+  ol.numbered h3 {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    line-height: 1.05;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+  ol.numbered .tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--spot2);
+    color: var(--paper);
+    padding: 2px 8px;
+    margin-bottom: 10px;
+    mix-blend-mode: multiply;
+  }
+  ol.numbered p { margin: 0 0 0.9em; }
+  ol.numbered p:last-child { margin-bottom: 0; }
+  .pullquote {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 44px -28px;
+    padding: 30px 28px;
+    background: var(--spot1);
+    color: var(--paper);
+    mix-blend-mode: multiply;
+    transform: rotate(-0.8deg);
+    box-shadow: 0 8px 0 var(--spot2-mix);
+  }
+  .pullquote span.attr {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    margin-top: 12px;
+    text-transform: uppercase;
+  }
+  .comparo {
+    margin: 44px 0;
+    padding: 22px;
+    border: 2.5px dashed var(--ink);
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent 0 12px,
+      rgba(33,150,243,0.08) 12px 24px
+    );
+  }
+  .comparo h4 {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+    font-size: 1.1rem;
+    color: var(--spot1);
+    mix-blend-mode: multiply;
+  }
+  .comparo table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+  }
+  .comparo th, .comparo td {
+    border-bottom: 1.5px solid var(--ink);
+    padding: 10px 8px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .comparo th {
+    background: var(--ink);
+    color: var(--paper);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+  }
+  .colophon {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 4px double var(--ink);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    line-height: 1.7;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+  }
+  .colophon .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .colophon .spot { color: var(--spot1); }
+  @media (max-width: 768px) {
+    body { font-size: 16px; }
+    .wrap { padding: 24px 18px 60px; }
+    h1 { font-size: 2.6rem; }
+    ol.numbered > li {
+      padding: 22px 16px 18px 16px;
+      transform: none !important;
+      box-shadow: 4px 4px 0 var(--spot2-mix) !important;
+    }
+    ol.numbered > li::before {
+      position: static;
+      display: inline-block;
+      margin-bottom: 8px;
+      font-size: 2rem;
+    }
+    .pullquote { margin: 30px -18px; padding: 22px 18px; font-size: 1.5rem; }
+    .comparo { padding: 16px 12px; }
+    .comparo table { font-size: 0.75rem; }
+    .deck { font-size: 1rem; }
+  }
+  @media (max-width: 400px) {
+    .comparo { overflow-x: auto; }
+    .comparo table { min-width: 460px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="logo">Verso &amp; Recto</div>
+    <div class="issue">Issue 07 · Family Law Zine · Autumn</div>
+  </header>
+
+  <div class="kicker">Field guide / comparative</div>
+  <h1>Fifty <span class="stamp">Grounds</span>, Fifty <span class="stamp blue">States</span></h1>
+  <p class="deck">Void, voidable, or just embarrassing? A crooked walk through how American jurisdictions treat annulment, with special attention to the messy corners: incapacity, non-consummation, fraud that goes to the essentials, and the tiny handful of states that still care about impotence in 2024.</p>
+
+  <section class="intro">
+    <p>Annulment is often described as the erasure of a marriage, but that flattens a wildly uneven map. Each state has quietly authored its own list of grounds, and those lists diverge on the questions that come up most often in practice, including whether physical inability to consummate is still cognizable, whether fraud has to touch the "essentials" of marriage, and how many months of cohabitation ratify a void-adjacent union. If you have arrived here trying to answer the narrower New York question of <a href="https://sjc1.vultrobjects.com/new-york/am-i-entitled-to-an-annulment-in-new-york-if-my-marriage-has-not-been-consummated.html">can you annul a marriage if it has not been consummated</a>, you should know that the answer in Albany looks nothing like the answer in Sacramento or Baton Rouge. This piece is a comparative sketch, not a hornbook.</p>
+    <p>The federal government does not regulate the front end of marriage or its dissolution; those questions are left to the states under a long line of cases running back through <a class="auth" href="https://en.wikipedia.org/wiki/Loving_v._Virginia" target="_blank" rel="noopener">Loving v. Virginia</a> and beyond. The <a class="auth" href="https://www.ncsc.org/" target="_blank" rel="noopener">National Center for State Courts</a> publishes usable summaries of state civil procedure, but on annulment doctrine you still have to read fifty statute books. What follows is a partial reading of ten of them.</p>
+  </section>
+
+  <ol class="numbered">
+
+    <li>
+      <span class="tag">New York · DRL § 140</span>
+      <h3>The narrow end of the spectrum</h3>
+      <p>New York's Domestic Relations Law § 140 recognizes six grounds: age (under 18), mental incapacity at the time of the marriage, mental illness of five years' continuous duration, physical incapacity (incurable), consent obtained by force, duress, or fraud, and incurable mental illness. Nowhere in that list is "we never had sex." Non-consummation matters only insofar as it evidences one of the listed grounds, most often incurable physical incapacity, and even then the party moving for annulment must show the condition was incurable and existed at the time of the marriage. The statute is old, the case law is older, and the pleading standard is unforgiving.</p>
+    </li>
+
+    <li>
+      <span class="tag">California · Fam. Code § 2210</span>
+      <h3>The mid-Atlantic of annulment</h3>
+      <p>California recognizes annulment on grounds of prior existing marriage, unsound mind, fraud, force, physical incapacity of entering into the marriage state, or being under the age of consent. Section 2210(f) specifically preserves physical incapacity as a ground, and California courts have applied it to impotence that is incurable and undisclosed. What California adds that New York does not is an explicit fraud ground that has been read expansively over the last thirty years to include misrepresentations about immigration intent, religion, and (in one 1980s decision) sterility concealed before the ceremony.</p>
+    </li>
+
+    <li>
+      <span class="tag">Texas · Fam. Code § 6.106</span>
+      <h3>Impotency, still on the books</h3>
+      <p>Texas Family Code § 6.106 keeps "impotency" as a distinct annulment ground where the impotence is permanent and the petitioner did not know of it at the time of the marriage, provided the petitioner has not voluntarily cohabited with the other party since learning of the condition. The Texas statute is one of the more explicit in the country on this point and is worth reading directly. The cohabitation-as-ratification rule shows up again and again across state codes and is the single most common trap for petitioners who wait too long.</p>
+    </li>
+
+    <li>
+      <span class="tag">Louisiana · CC art. 94–96</span>
+      <h3>The civilian holdout</h3>
+      <p>Louisiana, as always, does its own thing. The Civil Code distinguishes between "absolutely null" marriages (bigamous, incestuous, same-sex prior to 2015, or lacking a marriage ceremony) and "relatively null" marriages (consent vitiated by duress). Louisiana does not use the word "annulment" in the code, and physical incapacity does not appear as a stand-alone ground. Non-consummation, in the Louisiana view, is a symptom, not a cause. A petitioner who cannot fit the facts into one of the code's narrow categories of nullity is routed to divorce.</p>
+    </li>
+
+    <li>
+      <span class="tag">Florida · common-law tradition</span>
+      <h3>No statute, lots of cases</h3>
+      <p>Florida has no annulment statute at all. Annulment survives in Florida entirely as a matter of common-law equity, and the Florida courts have compiled a rough list of accepted grounds through decisions like <em>Kuehmsted v. Turnwall</em> (1932) and the more recent <em>Ashley v. Ashley</em> line. Impotence appears in those cases as a valid ground when incurable and concealed. The absence of a statute means Florida practitioners spend more time briefing history than filling out forms, which is either charming or infuriating depending on how you feel about the twentieth century.</p>
+    </li>
+
+    <li>
+      <span class="tag">Massachusetts · G.L. c. 207</span>
+      <h3>Void versus voidable</h3>
+      <p>Massachusetts codifies the ancient distinction between void marriages (bigamous, incestuous, or between parties one of whom lacked capacity at the time of the ceremony) and voidable marriages, which include those induced by fraud "essential to the marriage relation." The essentials test is the doctrinal battlefield in Massachusetts. Concealing a prior marriage counts; concealing debt does not. Concealing an inability or refusal to have children has gone both ways depending on the panel.</p>
+    </li>
+
+    <li>
+      <span class="tag">Illinois · 750 ILCS 5/301</span>
+      <h3>Rebranded but recognizable</h3>
+      <p>Illinois renamed annulment to "declaration of invalidity of marriage" in 1977, but the substance survives. The statute lists four grounds: lack of capacity to consent (including intoxication), inability to consummate that was unknown to the other party at the time, being under the statutory age, and prohibited relationship. The Illinois inability-to-consummate ground is one of the more directly worded in the country and does not require permanence in the same way Texas does.</p>
+    </li>
+
+    <li>
+      <span class="tag">Nevada · NRS 125.290</span>
+      <h3>The quickie state, also for undoing</h3>
+      <p>Nevada, famous for its 24-hour marriages, is comparatively strict on annulment. The statute permits it for want of consent (from fraud, coercion, or lack of understanding) and for consanguinity. Physical incapacity is not a listed ground. The gap between how easy Nevada makes it to marry and how narrow its annulment door is remains a good reminder that jurisdictional shopping cuts both ways.</p>
+    </li>
+
+    <li>
+      <span class="tag">Virginia · Code § 20-89.1</span>
+      <h3>The catch-all statute</h3>
+      <p>Virginia keeps one of the longer annulment statutes in the country. Grounds include natural or incurable impotency at the time of the marriage, felony conviction concealed at the time, prostitution or fathering-of-a-child concealed at the time, and pregnancy by another concealed at the time. It reads like a moral panic frozen in amber, and the Virginia Court of Appeals still applies it fairly regularly. Impotence must be natural (not induced) and incurable.</p>
+    </li>
+
+    <li>
+      <span class="tag">Comparative takeaway</span>
+      <h3>Where New York sits on the map</h3>
+      <p>New York is toward the restrictive end but not the most restrictive. Louisiana and Nevada are stricter, in the sense that they lack any consummation-adjacent ground at all. Texas, Virginia, and Illinois are more permissive, in that they name incapacity or non-consummation directly and provide a workable pleading standard. California occupies a middle ground with fraud doctrine doing most of the heavy lifting. What all ten jurisdictions share is a cohabitation-ratification rule of one form or another. If you knew of the defect and stayed anyway, the door closes.</p>
+    </li>
+  </ol>
+
+  <div class="pullquote">
+    "The essentials test is the doctrinal battlefield."
+    <span class="attr">— on Massachusetts fraud doctrine, above</span>
+  </div>
+
+  <div class="comparo">
+    <h4>Quick reference · incapacity &amp; non-consummation as annulment grounds</h4>
+    <table>
+      <thead>
+        <tr><th>State</th><th>Named ground?</th><th>Standard</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>New York</td><td>Physical incapacity</td><td>Incurable, at time of marriage</td></tr>
+        <tr><td>California</td><td>Physical incapacity</td><td>Incurable + concealed</td></tr>
+        <tr><td>Texas</td><td>Impotency</td><td>Permanent + undisclosed + no post-knowledge cohab</td></tr>
+        <tr><td>Louisiana</td><td>No</td><td>Route to divorce</td></tr>
+        <tr><td>Florida</td><td>Impotence (common law)</td><td>Incurable + concealed</td></tr>
+        <tr><td>Massachusetts</td><td>Via fraud "essential"</td><td>Case-by-case</td></tr>
+        <tr><td>Illinois</td><td>Inability to consummate</td><td>Unknown to petitioner at time of marriage</td></tr>
+        <tr><td>Nevada</td><td>No</td><td>Consent-based grounds only</td></tr>
+        <tr><td>Virginia</td><td>Natural + incurable impotence</td><td>At time of marriage, not induced</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section class="intro">
+    <h3 style="font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:1.2rem;margin-top:20px;">Closing notes for the comparativist</h3>
+    <p>Two threads run through every state code we looked at. The first is that annulment is doctrinally older than divorce and its language shows: "impotency," "consanguinity," "essentials of the marriage relation." These are not phrases lifted from twenty-first-century drafting. The second thread is ratification. Every jurisdiction, including the two civil-code holdouts, will close the annulment door if the petitioner cohabited with knowledge of the defect. That is the practical trap and the reason comparative work matters. A ground that is technically available in Virginia may be procedurally lost by the time a petitioner reaches the courthouse.</p>
+    <p>Nothing above is legal advice, and statutes change. The <a class="auth" href="https://www.nycourts.gov/" target="_blank" rel="noopener">New York State Unified Court System</a> publishes the current text of DRL § 140 with amendments; equivalent portals exist for every state discussed here. Read the statute before you rely on the summary.</p>
+  </section>
+
+  <footer class="colophon">
+    <div class="row">
+      <div>
+        <div class="spot">◼ Verso &amp; Recto</div>
+        <div>A family-law reading zine</div>
+        <div>Printed in editions of two hundred</div>
+      </div>
+      <div>
+        <div>Issue 07 · Comparative Survey</div>
+        <div>Set in Archivo Black &amp; Space Grotesk</div>
+        <div>Two-color risograph, teal &amp; magenta</div>
+      </div>
+    </div>
+    <div style="margin-top:18px;">No affiliation with any court, bar association, or law firm. Editorial only.</div>
+  </footer>
+
+</div>
+</body>
+</html>
